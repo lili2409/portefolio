@@ -159,6 +159,13 @@
       color: #22c55e;
       text-decoration: underline;
       transition: color 0.3s;
+
+    }
+      #compte-rendu .carousel-item img {
+      height: 300px;       /* fixe la hauteur */
+      object-fit: cover;   /* recadre sans déformer */
+      border-radius: 8px;  /* arrondi léger (optionnel) */
+
     }
   </style>
 </head>
@@ -370,93 +377,157 @@
 
 
   <!-- Compte-rendu -->
-  <section id="compte-rendu" class="py-5 bg-light">
-    <div class="container">
-      <h2 class="section-title mb-5 text-center">Compte-rendus</h2>
-      <div class="row g-4">
+<section id="compte-rendu" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="section-title mb-5 text-center">Compte-rendus</h2>
+    <div class="row g-4">
 
       <!-- TP Paramétrage -->
-<div class="col-md-6">
-  <div class="card shadow-sm h-100">
-    <div class="project-card shadow-soft rounded-4 overflow-hidden position-relative">
-      <img src="images/image_TP_SOTOCA.jpg" alt="TP Paramétrage" class="w-100">
-      <div class="overlay d-flex flex-column gap-2 justify-content-center align-items-center">
-        <a href="pdf/Compte_rendu_TP_Parametrage.pdf" download class="btn btn-primary btn-sm">
-          <img src="images/pack_office.jpg" alt="Icone Pack Office" class="me-2" style="width:20px; height:20px;">
-          Télécharger PDF
-        </a>
-        <a href="pdf/Les logiciels de diagnostic.pdf" download class="btn btn-primary btn-sm">
-          Télécharger PDF
-        </a>
-      </div>
-    </div>
-    <div class="card-body text-center">
-      <h5 class="card-title mb-0">TP Paramétrage</h5>
-    </div>
-  </div>
-</div>
-
-
-        <!-- Installation Serveur -->
-        <div class="col-md-6">
-          <div class="card shadow-sm h-100">
-            <div class="project-card shadow-soft rounded-4 overflow-hidden position-relative">
-              <img src="images/TP_Scratch.png" alt="Installation Serveur" class="w-100">
-              <div class="overlay">
-                <a href="pdf/Compte_rendu_Scratch.pdf" download class="btn btn-primary btn-sm">
-                  Télécharger PDF
+      <div class="col-md-6">
+        <div class="card shadow-sm h-25">
+          <div id="carouselParametrage" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <a href="pdf/Compte_rendu_TP_Parametrage.pdf" download>
+                  <img src="images/tp_paramétrage.png" class="d-block w-100" alt="Compte-rendu Paramétrage">
+                </a>
+              </div>
+              <div class="carousel-item">
+                <a href="pdf/B1_TP02_Les_logiciels_de_diagnostic.pdf" download>
+                  <img src="images/B1_TP02_Les_logiciels_de_diagnostic.png" class="d-block w-100" alt="Logiciels de diagnostic">
                 </a>
               </div>
             </div>
-            <div class="card-body text-center">
-              <h5 class="card-title mb-0">Installation Serveur</h5>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselParametrage"
+              data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Précédent</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselParametrage"
+              data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Suivant</span>
+            </button>
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title mb-0">Mr sotoca</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- TP Scratch -->
+      <div class="col-md-6">
+        <div class="card shadow-sm h-25">
+          <div id="carouselScratch" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <a href="pdf/Compte_rendu_Scratch.pdf" download>
+                  <img src="images/TP_Scratch.png" class="d-block w-100" alt="Compte-rendu Scratch">
+                </a>
+              </div>
+              <div class="carousel-item">
+                <a href="pdf/Correction_Scratch.pdf" download>
+                  <img src="images/eclipse.png" class="d-block w-100" alt="Correction Scratch">
+                </a>
+              </div>
+              <div class="carousel-item">
+                <a href="pdf/Exercices_Scratch.pdf" download>
+                  <img src="images/java.png" class="d-block w-100" alt="Exercices Scratch">
+                </a>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselScratch"
+              data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Précédent</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselScratch"
+              data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Suivant</span>
+            </button>
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title mb-0">Mme beauvallet</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Exemple : Troisième Carrousel -->
+      <div class="col-md-6">
+        <div class="card shadow-sm h-25">
+          <div id="carouselExemple" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <a href="pdf/Exemple1.pdf" download>
+                  <img src="images/exemple1.png" class="d-block w-100" alt="Exemple 1">
+                </a>
+              </div>
+              <div class="carousel-item">
+                <a href="pdf/Exemple2.pdf" download>
+                  <img src="images/exemple2.png" class="d-block w-100" alt="Exemple 2">
+                </a>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExemple"
+              data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Précédent</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExemple"
+              data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Suivant</span>
+            </button>
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title mb-0">Atelier de professionnalisation</h5>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+       
+
+
+        <!-- Contact -->
+        <section id="contact" class="py-5" style="background: linear-gradient(135deg, #0b1220, #0f172a); color: #fff;">
+          <div class="container">
+            <h2 class="section-title mb-5 text-white text-center">Contact</h2>
+            <div class="row justify-content-center">
+              <div class="col-md-8">
+                <div class="p-5 rounded-4 shadow-soft"
+                  style="background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); text-align: center;">
+                  <h5 class="mb-4">Mes coordonnées</h5>
+                  <p class="mb-3 fs-5"><i class="fas fa-envelope me-2"></i> <a
+                      href="mailto:djeffalnawellbts@gmail.com">djeffalnawellbts@gmail.com</a></p>
+                  <p class="mb-3 fs-5"><i class="fas fa-phone me-2"></i> +33 6 66 21 32 79</p>
+                  <p class="mb-3 fs-5"><i class="fas fa-map-marker-alt me-2"></i> Gap, France</p>
+                  <p class="text-white-50 mt-4 fs-6">N’hésitez pas à me contacter directement par email ou téléphone
+                    pour
+                    toute question ou opportunité.</p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        </section>
 
-      </div>
-    </div>
-  </section>
-
-
-
-
-  <!-- Contact -->
-  <section id="contact" class="py-5" style="background: linear-gradient(135deg, #0b1220, #0f172a); color: #fff;">
-    <div class="container">
-      <h2 class="section-title mb-5 text-white text-center">Contact</h2>
-      <div class="row justify-content-center">
-        <div class="col-md-8">
-          <div class="p-5 rounded-4 shadow-soft"
-            style="background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); text-align: center;">
-            <h5 class="mb-4">Mes coordonnées</h5>
-            <p class="mb-3 fs-5"><i class="fas fa-envelope me-2"></i> <a
-                href="mailto:djeffalnawellbts@gmail.com">djeffalnawellbts@gmail.com</a></p>
-            <p class="mb-3 fs-5"><i class="fas fa-phone me-2"></i> +33 6 66 21 32 79</p>
-            <p class="mb-3 fs-5"><i class="fas fa-map-marker-alt me-2"></i> Gap, France</p>
-            <p class="text-white-50 mt-4 fs-6">N’hésitez pas à me contacter directement par email ou téléphone pour
-              toute question ou opportunité.</p>
+        <!-- Footer -->
+        <footer class="footer py-4">
+          <div class="container d-flex flex-wrap justify-content-between align-items-center">
+            <span>© <span id="year"></span> Nawell Medjahed — Tous droits réservés.</span>
+            <div class="d-flex gap-3">
+              <a href="#top">Haut de page</a>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        </footer>
 
-  <!-- Footer -->
-  <footer class="footer py-4">
-    <div class="container d-flex flex-wrap justify-content-between align-items-center">
-      <span>© <span id="year"></span> Nawell Medjahed — Tous droits réservés.</span>
-      <div class="d-flex gap-3">
-        <a href="#top">Haut de page</a>
-      </div>
-    </div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+          document.getElementById("year").textContent = new Date().getFullYear();
+        </script>
 </body>
-
 
 </html>
