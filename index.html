@@ -376,7 +376,7 @@
 
 
 
-  <!-- Compte-rendu -->
+ <!-- Compte-rendu -->
 <section id="compte-rendu" class="py-5 bg-light">
   <div class="container">
     <h2 class="section-title mb-5 text-center">Compte-rendus</h2>
@@ -386,25 +386,12 @@
       <div class="col-md-6">
         <div class="card shadow-sm h-25">
           <div id="carouselParametrage" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <a href="pdf/Compte_rendu_TP_Parametrage.pdf" download>
-                  <img src="images/tp_paramétrage.png" class="d-block w-100" alt="Compte-rendu Paramétrage">
-                </a>
-              </div>
-              <div class="carousel-item">
-                <a href="pdf/B1_TP02_Les_logiciels_de_diagnostic.pdf" download>
-                  <img src="images/B1_TP02_Les_logiciels_de_diagnostic.png" class="d-block w-100" alt="Logiciels de diagnostic">
-                </a>
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselParametrage"
-              data-bs-slide="prev">
+            <div class="carousel-inner" id="carouselParametrageItems"></div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselParametrage" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Précédent</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselParametrage"
-              data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselParametrage" data-bs-slide="next">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Suivant</span>
             </button>
@@ -419,30 +406,12 @@
       <div class="col-md-6">
         <div class="card shadow-sm h-25">
           <div id="carouselScratch" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <a href="pdf/Compte_rendu_Scratch.pdf" download>
-                  <img src="images/TP_Scratch.png" class="d-block w-100" alt="Compte-rendu Scratch">
-                </a>
-              </div>
-              <div class="carousel-item">
-                <a href="pdf/Correction_Scratch.pdf" download>
-                  <img src="images/eclipse.png" class="d-block w-100" alt="Correction Scratch">
-                </a>
-              </div>
-              <div class="carousel-item">
-                <a href="pdf/Exercices_Scratch.pdf" download>
-                  <img src="images/java.png" class="d-block w-100" alt="Exercices Scratch">
-                </a>
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselScratch"
-              data-bs-slide="prev">
+            <div class="carousel-inner" id="carouselScratchItems"></div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselScratch" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Précédent</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselScratch"
-              data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselScratch" data-bs-slide="next">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Suivant</span>
             </button>
@@ -453,29 +422,16 @@
         </div>
       </div>
 
-      <!-- Exemple : Troisième Carrousel -->
+      <!-- Exemple -->
       <div class="col-md-6">
         <div class="card shadow-sm h-25">
           <div id="carouselExemple" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <a href="pdf/Exemple1.pdf" download>
-                  <img src="images/exemple1.png" class="d-block w-100" alt="Exemple 1">
-                </a>
-              </div>
-              <div class="carousel-item">
-                <a href="pdf/Exemple2.pdf" download>
-                  <img src="images/exemple2.png" class="d-block w-100" alt="Exemple 2">
-                </a>
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExemple"
-              data-bs-slide="prev">
+            <div class="carousel-inner" id="carouselExempleItems"></div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExemple" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Précédent</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExemple"
-              data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExemple" data-bs-slide="next">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Suivant</span>
             </button>
@@ -489,7 +445,57 @@
     </div>
   </div>
 </section>
-       
+
+<!-- SCRIPT pour remplir automatiquement les carrousels -->
+<script>
+  // =======================
+  // LISTE DES DOCUMENTS
+  // =======================
+
+  const docsParametrage = [
+    { pdf: "pdf/Compte_rendu_TP_Parametrage.pdf", img: "images/tp_paramétrage.png", alt: "Compte-rendu Paramétrage" },
+    { pdf: "pdf/B1_TP02_Les_logiciels_de_diagnostic.pdf", img: "images/B1_TP02_Les_logiciels_de_diagnostic.png", alt: "Logiciels de diagnostic" },
+    // 👉 ajoute ici tes autres fichiers (jusqu'à 100 ou +)
+  ];
+
+  const docsScratch = [
+    { pdf: "pdf/Compte_rendu_Scratch.pdf", img: "images/TP_Scratch.png", alt: "Compte-rendu Scratch" },
+    { pdf: "pdf/TP_premier_pas_java.pdf", img: "images/eclipse.png", alt: "TP_premier_pas_java" },
+    { pdf: "pdf/TP_java.pdf", img: "images/java.png", alt: "TP_java" },
+    
+  ];
+
+  const docsExemple = [
+    { pdf: "pdf/Exemple1.pdf", img: "images/portefolio.png", alt: "Exemple 1" },
+    { pdf: "pdf/Exemple1.pdf", img: "images/CSS.png", alt: "Exemple 1" },
+    { pdf: "pdf/Exemple2.pdf", img: "images/HTML.png", alt: "Exemple 2" },
+    // 👉 ajoute ici tes autres fichiers
+  ];
+
+  // =======================
+  // FONCTION DE GÉNÉRATION
+  // =======================
+  function remplirCarousel(containerId, docs) {
+    const container = document.getElementById(containerId);
+    docs.forEach((doc, index) => {
+      const div = document.createElement("div");
+      div.classList.add("carousel-item");
+      if (index === 0) div.classList.add("active"); // premier élément actif
+      div.innerHTML = `
+        <a href="${doc.pdf}" download>
+          <img src="${doc.img}" class="d-block w-100" alt="${doc.alt}">
+        </a>
+      `;
+      container.appendChild(div);
+    });
+  }
+
+  // Remplir chaque carrousel
+  remplirCarousel("carouselParametrageItems", docsParametrage);
+  remplirCarousel("carouselScratchItems", docsScratch);
+  remplirCarousel("carouselExempleItems", docsExemple);
+</script>
+
 
 
         <!-- Contact -->
